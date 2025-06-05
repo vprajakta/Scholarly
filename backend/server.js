@@ -16,7 +16,7 @@ app.use(cors());
 
 //Routes
 app.get('/',(req,res)=>{
-    res.send('Api Working');
+    res.send('Api Working successfully');
 })
 
 app.post('/clerk',express.json(),clerkWebhooks)
