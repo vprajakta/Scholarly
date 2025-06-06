@@ -53,6 +53,9 @@ const courseSchema = new mongoose.Schema({
     ref: 'User',
     required: true,
   },
+  enrolledStudents: [
+    {type: String, ref: 'User'}
+  ]
 },{timestamps: true, minimize: false});
 
 const Course = mongoose.model('Course',courseSchema);
