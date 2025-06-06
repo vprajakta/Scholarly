@@ -1,4 +1,5 @@
 import Course from "../models/Course.js";
+import Stripe from "stripe";
 
 
 //get all courses
@@ -33,3 +34,4 @@ export const getCourseId = async (req,res)=>{
         res.json({ success: false, message: error.message });
     }
 }
+

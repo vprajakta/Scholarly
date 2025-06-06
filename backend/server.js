@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import 'dotenv/config'
+import bodyParser from 'body-parser';
 
 import connectDB from './configs/mongodb.js';
 import {clerkWebhooks} from './controllers/webhooks.js'
@@ -22,6 +23,7 @@ await connectCloudinary()
 //Middlewares
 app.use(cors());
 app.use(clerkMiddleware())
+app.use("/clerk", bodyParser.raw({ type: "application/json" }));
 
 //Routes
 app.get('/',(req,res)=>{
