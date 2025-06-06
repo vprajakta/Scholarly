@@ -38,7 +38,7 @@ app.use('/api/course',express.json(),courseRouter);
 
 app.use('/api/user',express.json(),userRouter)
 
-app.post('/stripe',express.raw({type: 'application/json'}),stripeWebhooks)
+app.post('/stripe',bodyParser.raw({type: 'application/json'}),stripeWebhooks)
 
 //Port
 
